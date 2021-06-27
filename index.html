@@ -7,8 +7,44 @@
   <title>Budget App</title>
   <link rel="stylesheet" href="style.css">
   <script defer src="app.js"></script>
+  <script src="https://unpkg.com/feather-icons"></script>
 </head>
 <body>
+
+  <div class="app-container">
+    <h1>Smartmoney</h1>
+    
+    <div class="balance">
+      <h5>Balance</h5>
+      <h2 id="balance">$0.00</h2>
+    </div>
+    <div class="in-exp-container">
+      <div class="income">
+        <h5>income</h5>
+        <h3 id="income">$0.00</h3>
+      </div>
+      <div class="expense">
+        <h5>expense</h5>
+        <h3 id="expenses">$0.00</h3>
+      </div>
+    </div>
+    <!-- -------------------------------------Dashboard--------------------------------------- -->
+
+    <section class="dashboard">
+      <h2>Dashboard</h2>
+      <div class="transaction-container">
+        <h5>Transaction History</h5>
+        <ul id="transaction-list" class="transaction-list">
+
+        </ul>
+      </div>
+    </section>
+    <section class="add-transaction">
+      <input type="text" id="transaction-input-txt" placeholder="name">
+      <input type="number" id="transaction-input-amount" placeholder="$0">
+      <button id="add-btn"><i data-feather="plus-circle"></i></button>
+    </section>
+  </div>
   
 </body>
 </html>
