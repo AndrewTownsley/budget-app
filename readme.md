@@ -47,3 +47,6 @@
 ### c. update the values of the balance, income, and expenses again.
 
 7.  listen for the Input form to be submitted, and call the function that adds a transaction .
+
+**_ 8. Store the transaction items in Local Storage _**
+**_ 8. Store the transaction items in Local Storage _**
