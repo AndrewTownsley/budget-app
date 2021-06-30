@@ -9,11 +9,11 @@
 
 ### c. push that Transaction to the List. -->
 
-### d. update the income, expenses, and balance.
+<!-- ### d. Call the function that updates the income, expenses, and balance. -->
 
-### e. Reset the input values to be blank
+<!-- ### e. Reset the input values to be blank -->
 
-2.  Generate a random ID# for the transaction items in the list.
+<!-- 2.  Generate a random ID# for the transaction items in the list. -->
 
 3.  Write a function to add a new Transaction to the DOM.
     **_ a. Get the +Plus or -Minus sign from the transaction input. _**
