@@ -9,7 +9,7 @@
 
 ### c. push that Transaction to the List. -->
 
-<!-- ### d. Call the function that updates the income, expenses, and balance. -->
+### d. Call the function that updates the income, expenses, and balance.
 
 <!-- ### e. Reset the input values to be blank -->
 
@@ -18,11 +18,11 @@
 3.  Write a function to add a new Transaction to the DOM.
     **_ a. Get the +Plus or -Minus sign from the transaction input. _**
 
-    **_ b. Create the HTML for the transaction item. _**
+    <!-- **_ b. Create the HTML for the transaction item. _** -->
 
     **_ c. Add a class to it based on it being Positive or Negative _**
 
-    **_ d. Append the item to the transaction-list _**
+    <!-- **_ d. Append the item to the transaction-list _** -->
 
 4.  Write a function to update the value of the balance, income, and expense.
 
