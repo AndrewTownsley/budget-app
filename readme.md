@@ -1,10 +1,13 @@
 1.  Write a Function to add a transaction
+<!--
 
 ### a. make sure input is not blank
 
 ### b. Create a transaction Object with an ID, the text and amount from the Input
 
-### c. push that Transaction to the List.
+**/ ParseInt() to change the amount text input to a number /**
+
+### c. push that Transaction to the List. -->
 
 ### d. update the income, expenses, and balance.
 
