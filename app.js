@@ -18,19 +18,19 @@ const randomID = () => {
 
 const addTransaction = (event) => {
     event.preventDefault();
-    if(inputText == "" || inputAmount == "") {
+    if(inputText.value == "" || inputAmount.value == "") {
         console.log("Blank Input");
         // Add error message class to input
     } else {
         const transaction = {
             name: inputText.value,
-            amount: inputAmount.value,
+            amount: +inputAmount.value,
             id: randomID(),
         }
         transactions.push(transaction)
         createTransaction();
         updateDisplayValues();
-        console.log(inputText.value);
+        // console.log(inputText.value);
         console.log(inputAmount.value);
         console.log(transaction);
     }
@@ -52,11 +52,11 @@ const updateDisplayValues = () => {
     let amounts = transactions.map(transaction => transaction.amount);
     console.log(amounts);
 
-    let transactionTotal = amounts.reduce((a,b) => (a += b), 0);
+    let transactionTotal = amounts.reduce((a,b) => (a + b), 0);
     console.log(transactionTotal);
     balance.innerText = `${transactionTotal}`
-    income.innerText = 
-    expense.innerText = 
+    // income.innerText = 
+    // expense.innerText = 
 }
 
 
