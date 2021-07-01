@@ -55,8 +55,8 @@ const updateDisplayValues = () => {
     let transactionTotal = amounts.reduce((a,b) => (a += b), 0);
     console.log(transactionTotal);
     balance.innerText = `${transactionTotal}`
-    // income.innerText = 
-    // expense.innerText = 
+    income.innerText = 
+    expense.innerText = 
 }
 
 
