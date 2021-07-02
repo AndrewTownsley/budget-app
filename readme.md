@@ -9,14 +9,14 @@
 
 ### c. push that Transaction to the List. -->
 
-### d. Call the function that updates the income, expenses, and balance.
+<!-- ### d. Call the function that updates the income, expenses, and balance. -->
 
 <!-- ### e. Reset the input values to be blank -->
 
 <!-- 2.  Generate a random ID# for the transaction items in the list. -->
 
 3.  Write a function to add a new Transaction to the DOM.
-    **_ a. Get the +Plus or -Minus sign from the transaction input. _**
+    <!-- **_ a. Get the +Plus or -Minus sign from the transaction input. _** -->
 
     <!-- **_ b. Create the HTML for the transaction item. _** -->
 
@@ -26,9 +26,9 @@
 
 4.  Write a function to update the value of the balance, income, and expense.
 
-### a. Map over the transaction list with (transaction.inputAmount)
+<!-- ### a. Map over the transaction list with (transaction.inputAmount) -->
 
-### b. Calculate the total by reducing the above^^ to $00.00 format.
+<!-- ### b. Calculate the total by reducing the above^^ to $00.00 format. -->
 
 ### c. Calculate income from step (a) above^^^ to $00.00 format.
 

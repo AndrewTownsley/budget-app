@@ -43,7 +43,7 @@ const createTransaction = () => {
     const transactionItem = document.createElement('li');
     transactionItem.classList.add('transaction-item');
     transactionList.appendChild(transactionItem);
-    transactionItem.innerHTML = `<span>${inputText.value}</span><span>${inputAmount.value}</span>`;
+    transactionItem.innerHTML = `<span>${inputText.value}</span><span> $${inputAmount.value}</span>`;
     // Add an icon to delete the transaction.  Also a class based on a negative or positive transaction //
 
 }
@@ -54,9 +54,18 @@ const updateDisplayValues = () => {
 
     let transactionTotal = amounts.reduce((a,b) => (a + b), 0);
     console.log(transactionTotal);
-    balance.innerText = `${transactionTotal}`
-    // income.innerText = 
-    // expense.innerText = 
+    balance.innerText = `$${transactionTotal}`
+
+    let incomeTotal = amounts
+        .filter(item => item > 0)
+        .reduce((acc, item) => acc + item, 0);
+        console.log(incomeTotal);
+    income.innerText = `$${incomeTotal}`;
+
+    let expenseTotal = amounts
+        .filter(item => item < 0)
+        .reduce((acc, item) => acc + item, 0)
+    expense.innerText = `$${expenseTotal}`;
 }
 
 
