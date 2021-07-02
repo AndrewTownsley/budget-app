@@ -30,11 +30,11 @@
 
 <!-- ### b. Calculate the total by reducing the above^^ to $00.00 format. -->
 
-### c. Calculate income from step (a) above^^^ to $00.00 format.
+<!-- ### c. Calculate income from step (a) above^^^ to $00.00 format. -->
 
-### d. Calculate expenses from step (a) above^^^ to $00.00 format.
+<!-- ### d. Calculate expenses from step (a) above^^^ to $00.00 format. -->
 
-### e. Update the DOM with the Balance, income, and expense totals.
+<!-- ### e. Update the DOM with the Balance, income, and expense totals. -->
 
 5.  Write a function to remove a transaction item.
     **_ a. filter the transaction list ID's to remove the item with the ID that we want to remove.(look up how to do this on stack overflow) _**

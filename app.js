@@ -8,6 +8,7 @@ const inputForm = document.getElementById('input-form')
 let inputText = document.getElementById('transaction-input-txt')
 let inputAmount = document.getElementById('transaction-input-amount')
 const addBtn = document.getElementById('add-btn')
+const deleteBtn = document.getElementById('delete-btn')
 let transactions = []
 
 
@@ -28,32 +29,32 @@ const addTransaction = (event) => {
             id: randomID(),
         }
         transactions.push(transaction)
-        createTransaction();
+        createTransaction(transaction);
         updateDisplayValues();
-        // console.log(inputText.value);
-        console.log(inputAmount.value);
         console.log(transaction);
+        
+        inputText.value = ""
+        inputAmount.value = ""
     }
-
-    inputText.value = ""
-    inputAmount.value = ""
 }
 
-const createTransaction = () => {
+const createTransaction = (transaction) => {
     const transactionItem = document.createElement('li');
     transactionItem.classList.add('transaction-item');
+    transactionItem.innerHTML = 
+    `<span>${transaction.name}</span>
+    <span> $${transaction.amount}</span>
+    <button onclick="deleteTransaction(${transaction.id})">X</button>
+    `;
     transactionList.appendChild(transactionItem);
-    transactionItem.innerHTML = `<span>${inputText.value}</span><span> $${inputAmount.value}</span>`;
     // Add an icon to delete the transaction.  Also a class based on a negative or positive transaction //
 
 }
 
 const updateDisplayValues = () => {
     let amounts = transactions.map(transaction => transaction.amount);
-    console.log(amounts);
 
     let transactionTotal = amounts.reduce((a,b) => (a + b), 0);
-    console.log(transactionTotal);
     balance.innerText = `$${transactionTotal}`
 
     let incomeTotal = amounts
@@ -68,6 +69,23 @@ const updateDisplayValues = () => {
     expense.innerText = `$${expenseTotal}`;
 }
 
+const deleteTransaction = (id) => {
+    transactions = transactions.filter((transaction) => {
+        transaction.id !== id;
+
+        init()
+    })
+}
+
+function init() {
+    transactionList.innerHTML = '';
+    transactions.forEach(createTransaction);
+    updateDisplayValues();
+}
+
+init();
 
 
-inputForm.addEventListener("submit", addTransaction)
+
+inputForm.addEventListener("submit", addTransaction);
+
