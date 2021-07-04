@@ -35,11 +35,14 @@
 <!-- ### d. Calculate expenses from step (a) above^^^ to $00.00 format. -->
 
 <!-- ### e. Update the DOM with the Balance, income, and expense totals. -->
-
+<!--
 5.  Write a function to remove a transaction item.
     **_ a. filter the transaction list ID's to remove the item with the ID that we want to remove.(look up how to do this on stack overflow) _**
 
-**_ b. call a function to reInitialize the list(See step 6 below) _**
+**_ b. call a function to reInitialize the list(See step 6 below) _** -->
+
+**Store the transaction items in Local Storage \_**
+**Store the transaction items in Local Storage \_**
 
 6.  Write a function to reinitialize the transaction list when an item is removed.
 
@@ -50,6 +53,3 @@
 ### c. update the values of the balance, income, and expenses again.
 
 7.  listen for the Input form to be submitted, and call the function that adds a transaction .
-
-**_ 8. Store the transaction items in Local Storage _**
-**_ 8. Store the transaction items in Local Storage _**

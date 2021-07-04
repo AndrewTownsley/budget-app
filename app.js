@@ -41,6 +41,9 @@ const addTransaction = (event) => {
 const createTransaction = (transaction) => {
     const transactionItem = document.createElement('li');
     transactionItem.classList.add('transaction-item');
+    transaction.amount > 0 ? 
+    transactionItem.classList.add('positive') : 
+    transactionItem.classList.add('negative');
     transactionItem.innerHTML = 
     `<span>${transaction.name}</span>
     <span> $${transaction.amount}</span>
@@ -60,7 +63,6 @@ const updateDisplayValues = () => {
     let incomeTotal = amounts
         .filter(item => item > 0)
         .reduce((acc, item) => acc + item, 0);
-        console.log(incomeTotal);
     income.innerText = `$${incomeTotal}`;
 
     let expenseTotal = amounts
@@ -70,11 +72,9 @@ const updateDisplayValues = () => {
 }
 
 const deleteTransaction = (id) => {
-    transactions = transactions.filter((transaction) => {
-        transaction.id !== id;
-
+    transactions = transactions.filter(transaction => 
+        transaction.id !== id)
         init()
-    })
 }
 
 function init() {
