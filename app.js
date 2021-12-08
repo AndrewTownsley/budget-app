@@ -9,15 +9,39 @@ let inputText = document.getElementById('transaction-input-txt')
 let inputAmount = document.getElementById('transaction-input-amount')
 const addBtn = document.getElementById('add-btn')
 const deleteBtn = document.getElementById('delete-btn')
-let transactions = []
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
+
+
+// Transactions are not getting saved to local storage or rendered from what is alreasy in local storage.
+
+
+///////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
 
 
 
 const randomID = () => {
-   return Math.floor(Math.random() * 1000);
+    return Math.floor(Math.random() * 1000);
 }
 
-const addTransaction = (event) => {
+const localStorageTransactions = JSON.parse(
+    localStorage.getItem('transactions')
+    );
+    
+let transactions = localStorage.getItem('transactions') !== null ? localStorageTransactions : [];
+
+console.log(transactions);
+
+    
+    const addTransaction = (event) => {
+    console.log(e.target);
     event.preventDefault();
     if(inputText.value == "" || inputAmount.value == "") {
         console.log("Blank Input");
@@ -28,10 +52,12 @@ const addTransaction = (event) => {
             amount: +inputAmount.value,
             id: randomID(),
         }
+        console.log(transactions);
+        console.log(transaction);
         transactions.push(transaction)
         createTransaction(transaction);
         updateDisplayValues();
-        console.log(transaction);
+        updateLocalStorage();
         
         inputText.value = ""
         inputAmount.value = ""
@@ -54,6 +80,7 @@ const createTransaction = (transaction) => {
 
 }
 
+
 const updateDisplayValues = () => {
     let amounts = transactions.map(transaction => transaction.amount);
 
@@ -74,7 +101,12 @@ const updateDisplayValues = () => {
 const deleteTransaction = (id) => {
     transactions = transactions.filter(transaction => 
         transaction.id !== id)
+        updateLocalStorage();
         init()
+}
+
+const updateLocalStorage = () => {
+    localStorage.setItem('transactions', JSON.stringify(transactions));
 }
 
 function init() {
@@ -84,7 +116,6 @@ function init() {
 }
 
 init();
-
 
 
 inputForm.addEventListener("submit", addTransaction);

@@ -44,6 +44,7 @@
 **Store the transaction items in Local Storage \_**
 **Store the transaction items in Local Storage \_**
 
+<!--
 6.  Write a function to reinitialize the transaction list when an item is removed.
 
 ### a. clear the list to be empty.
@@ -52,4 +53,18 @@
 
 ### c. update the values of the balance, income, and expenses again.
 
-7.  listen for the Input form to be submitted, and call the function that adds a transaction .
+7.  listen for the Input form to be submitted, and call the function that adds a transaction . -->
+
+8.  Add tabs and different displays for income, expenses, and all transactions
+    a. Add a button for each that selects the individual display.
+    b. Add edit and delete buttons
+    c. When one of the selector buttons is clicked, make that button active, with full opacity, and the others inactive, with low opacity.
+    d. When a selector button is clicked, the other (income, all, expense) lists need to be hidden, while the active selection is shown to the user.
+
+9.  Create an active() function that takes the selected button from hidden to displayed when it is clicked.
+
+10. Create an inactive() function that takes the selected button from displayed to hidden when clicked.
+
+11. Create a show() function that shows the selected list element when clicked.
+
+12. Create a hide() function that hides the selected list element when clicked.
