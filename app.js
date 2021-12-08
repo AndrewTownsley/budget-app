@@ -33,15 +33,16 @@ const randomID = () => {
 
 const localStorageTransactions = JSON.parse(
     localStorage.getItem('transactions')
-    );
+  );
     
-let transactions = localStorage.getItem('transactions') !== null ? localStorageTransactions : [];
+  let transactions =
+  localStorage.getItem('transactions') !== null ? localStorageTransactions : [];
 
 console.log(transactions);
 
     
     const addTransaction = (event) => {
-    console.log(e.target);
+    console.log(event.target);
     event.preventDefault();
     if(inputText.value == "" || inputAmount.value == "") {
         console.log("Blank Input");
