@@ -1,14 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
-
-
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&display=swap');
 
 * {
   margin: 0;
   padding: 0;
 }
 
-body {
-  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+body, html {
+  font-family: "Quicksand", Arial, Helvetica, sans-serif;
   color: #333;
 }
 
@@ -34,19 +32,51 @@ h1 {
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
     background: #ff00cc;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #333399, #ff00cc); 
-    background: linear-gradient(to right, #333399, #ff00cc); 
+    background: rgb(2,0,36);
+    background: linear-gradient(40deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 50%, rgba(0,212,255,1) 100%);
     color: rgb(246, 246, 246);
     padding-bottom: 1rem;
     z-index: 1;
-    .balance {
-        margin: 2rem;
-}
+    .balance,
+    .income,
+    .expense {
+        max-width: 100px;
+        margin: 1rem;
+        padding: 0.8rem;
+        border-radius: 5px;
+        background-color: #fff;
+        color: #444;
+        h5 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #666;
+            padding-bottom: 5px;
+            svg {
+                padding-right: 5px;
+                height: 12px;
+                width: 12px;
+            }
+        }
+    }
+    .income {
+        svg {
+            color: rgba(0, 224, 101, 0.5);
+            fill: rgba(0, 224, 101, 0.5);
+        }
+    }
+    .expense {
+        svg {
+            color: rgba(255, 38, 121, 0.5);
+            fill: rgba(255, 38, 121, 0.5);
+        }
+    }
     .in-exp-container {
-        margin: 2rem;
+        // margin: 0.5rem;
         display: flex;
         justify-content: space-between;
     }
+
 }
 
 .dashboard {
@@ -100,10 +130,42 @@ h1 {
     }
 }
 
+.transaction-list {
+    padding: 5px;
+    list-style-type: none;
+    .transaction-item {
+        background-color: #fff;
+        max-width: 100%;
+        padding: 0.5rem;
+        margin-bottom: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #999;
+        div {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+        .transaction-item-name {
+            color: #333399;
+            font-weight: 500;
+        }
+        button {
+            font-family: "Quicksand", Arial, Helvetica, sans-serif;
+            padding-left: 5px;
+            font-weight: 500;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+        }
+    }
+}
+
 .positive {
-  color: green;
+  color: rgb(0, 224, 101);
 }
 
 .negative {
-  color: red;
+  color: rgb(255, 38, 121);
 }

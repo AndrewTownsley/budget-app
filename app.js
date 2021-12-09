@@ -10,23 +10,6 @@ let inputAmount = document.getElementById('transaction-input-amount')
 const addBtn = document.getElementById('add-btn')
 const deleteBtn = document.getElementById('delete-btn')
 
-
-
-
-///////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////
-
-
-// Transactions are not getting saved to local storage or rendered from what is alreasy in local storage.
-
-
-///////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////
-
-
-
 const randomID = () => {
     return Math.floor(Math.random() * 1000);
 }
@@ -72,9 +55,13 @@ const createTransaction = (transaction) => {
     transactionItem.classList.add('positive') : 
     transactionItem.classList.add('negative');
     transactionItem.innerHTML = 
-    `<span>${transaction.name}</span>
-    <span> $${transaction.amount}</span>
-    <button onclick="deleteTransaction(${transaction.id})">X</button>
+    `<div>
+        <span class="transaction-item-name" ><i data-feather="circle"></i>${transaction.name}</span>
+    </div>
+    <div>
+    <span class="transaction-item-amount"> $${transaction.amount}</span>
+    <button onclick="deleteTransaction(${transaction.id})">delete</button>
+    </div>
     `;
     transactionList.appendChild(transactionItem);
     // Add an icon to delete the transaction.  Also a class based on a negative or positive transaction //

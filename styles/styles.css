@@ -1,11 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&display=swap");
 * {
   margin: 0;
   padding: 0;
 }
 
-body {
-  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+body, html {
+  font-family: "Quicksand", Arial, Helvetica, sans-serif;
   color: #333;
 }
 
@@ -38,19 +38,59 @@ h1 {
   border-top-right-radius: 30px;
   background: #ff00cc;
   /* fallback for old browsers */
-  background: -webkit-gradient(linear, left top, right top, from(#333399), to(#ff00cc));
-  background: linear-gradient(to right, #333399, #ff00cc);
+  background: #020024;
+  background: linear-gradient(40deg, #020024 0%, #090979 50%, #00d4ff 100%);
   color: #f6f6f6;
   padding-bottom: 1rem;
   z-index: 1;
 }
 
-.data-display .balance {
-  margin: 2rem;
+.data-display .balance,
+.data-display .income,
+.data-display .expense {
+  max-width: 100px;
+  margin: 1rem;
+  padding: 0.8rem;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #444;
+}
+
+.data-display .balance h5,
+.data-display .income h5,
+.data-display .expense h5 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #666;
+  padding-bottom: 5px;
+}
+
+.data-display .balance h5 svg,
+.data-display .income h5 svg,
+.data-display .expense h5 svg {
+  padding-right: 5px;
+  height: 12px;
+  width: 12px;
+}
+
+.data-display .income svg {
+  color: rgba(0, 224, 101, 0.5);
+  fill: rgba(0, 224, 101, 0.5);
+}
+
+.data-display .expense svg {
+  color: rgba(255, 38, 121, 0.5);
+  fill: rgba(255, 38, 121, 0.5);
 }
 
 .data-display .in-exp-container {
-  margin: 2rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -135,11 +175,60 @@ h1 {
   cursor: pointer;
 }
 
+.transaction-list {
+  padding: 5px;
+  list-style-type: none;
+}
+
+.transaction-list .transaction-item {
+  background-color: #fff;
+  max-width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 1px solid #999;
+}
+
+.transaction-list .transaction-item div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.transaction-list .transaction-item .transaction-item-name {
+  color: #333399;
+  font-weight: 500;
+}
+
+.transaction-list .transaction-item button {
+  font-family: "Quicksand", Arial, Helvetica, sans-serif;
+  padding-left: 5px;
+  font-weight: 500;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
 .positive {
-  color: green;
+  color: #00e065;
 }
 
 .negative {
-  color: red;
+  color: #ff2679;
 }
 /*# sourceMappingURL=styles.css.map */
