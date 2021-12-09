@@ -21,14 +21,11 @@ const localStorageTransactions = JSON.parse(
   let transactions =
   localStorage.getItem('transactions') !== null ? localStorageTransactions : [];
 
-console.log(transactions);
 
     
     const addTransaction = (event) => {
-    console.log(event.target);
     event.preventDefault();
     if(inputText.value == "" || inputAmount.value == "") {
-        console.log("Blank Input");
         // Add error message class to input
     } else {
         const transaction = {
@@ -36,8 +33,7 @@ console.log(transactions);
             amount: +inputAmount.value,
             id: randomID(),
         }
-        console.log(transactions);
-        console.log(transaction);
+
         transactions.push(transaction)
         createTransaction(transaction);
         updateDisplayValues();
