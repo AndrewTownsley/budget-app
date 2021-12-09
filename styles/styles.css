@@ -1,16 +1,17 @@
-@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;1,700&display=swap");
 * {
   margin: 0;
   padding: 0;
 }
 
 body, html {
-  font-family: "Quicksand", Arial, Helvetica, sans-serif;
+  font-family: "Roboto","Helvetica Neue",Arial,sans-serif;
   color: #333;
 }
 
 h1 {
   margin: 1rem;
+  color: #dbdbdb;
 }
 
 .app-container {
@@ -33,6 +34,14 @@ h1 {
   -webkit-box-shadow: 0px 10px 15px 3px rgba(119, 119, 119, 0.3);
 }
 
+@media (max-width: 500px) {
+  .app-container {
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    margin: 0;
+  }
+}
+
 .data-display {
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
@@ -40,7 +49,7 @@ h1 {
   /* fallback for old browsers */
   background: #020024;
   background: linear-gradient(40deg, #020024 0%, #090979 50%, #00d4ff 100%);
-  color: #f6f6f6;
+  color: #dbdbdb;
   padding-bottom: 1rem;
   z-index: 1;
 }
@@ -48,7 +57,9 @@ h1 {
 .data-display .balance,
 .data-display .income,
 .data-display .expense {
-  max-width: 100px;
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
   margin: 1rem;
   padding: 0.8rem;
   border-radius: 5px;
@@ -97,6 +108,25 @@ h1 {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+@media (max-width: 450px) {
+  .data-display {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+  .data-display .balance h2, .data-display .balance h5,
+  .data-display .income h2,
+  .data-display .income h5,
+  .data-display .expense h2,
+  .data-display .expense h5 {
+    font-size: 0.75rem;
+  }
+  .data-display .balance h3,
+  .data-display .income h3,
+  .data-display .expense h3 {
+    font-size: 0.65rem;
+  }
 }
 
 .dashboard {
@@ -175,9 +205,15 @@ h1 {
   cursor: pointer;
 }
 
+.dashboard .add-transaction button svg:hover {
+  fill: #e6e6ff;
+}
+
 .transaction-list {
   padding: 5px;
   list-style-type: none;
+  max-height: 1000px;
+  overflow-y: scroll;
 }
 
 .transaction-list .transaction-item {
@@ -216,19 +252,23 @@ h1 {
 }
 
 .transaction-list .transaction-item button {
-  font-family: "Quicksand", Arial, Helvetica, sans-serif;
   padding-left: 5px;
   font-weight: 500;
+  color: #666;
   background-color: transparent;
   border: none;
   cursor: pointer;
 }
 
+.transaction-list .transaction-item button:hover {
+  color: #333;
+}
+
 .positive {
-  color: #00e065;
+  border-left: 4px solid rgba(0, 224, 101, 0.5);
 }
 
 .negative {
-  color: #ff2679;
+  border-left: 4px solid rgba(255, 38, 121, 0.5);
 }
 /*# sourceMappingURL=styles.css.map */
