@@ -59,7 +59,7 @@ const createTransaction = (transaction) => {
         <span class="transaction-item-name" ><i data-feather="circle"></i>${transaction.name}</span>
     </div>
     <div>
-    <span class="transaction-item-amount"> $${transaction.amount}</span>
+    <span class="transaction-item-amount"> $${transaction.amount.toLocaleString('en-us')}</span>
     <button onclick="deleteTransaction(${transaction.id})">delete</button>
     </div>
     `;
@@ -73,17 +73,17 @@ const updateDisplayValues = () => {
     let amounts = transactions.map(transaction => transaction.amount);
 
     let transactionTotal = amounts.reduce((a,b) => (a + b), 0);
-    balance.innerText = `$${transactionTotal}`
+    balance.innerText = `$${transactionTotal.toLocaleString('en-us')}`
 
     let incomeTotal = amounts
         .filter(item => item > 0)
         .reduce((acc, item) => acc + item, 0);
-    income.innerText = `$${incomeTotal}`;
+    income.innerText = `$${incomeTotal.toLocaleString('en-us')}`;
 
     let expenseTotal = amounts
         .filter(item => item < 0)
         .reduce((acc, item) => acc + item, 0)
-    expense.innerText = `$${expenseTotal}`;
+    expense.innerText = `$${expenseTotal.toLocaleString('en-us')}`;
 }
 
 const deleteTransaction = (id) => {
