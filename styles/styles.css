@@ -67,9 +67,10 @@ h1 {
   color: #444;
 }
 
-.data-display .balance h5,
-.data-display .income h5,
-.data-display .expense h5 {
+.data-display .balance h2,
+.data-display .income h2,
+.data-display .expense h2 {
+  font-size: 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -83,9 +84,9 @@ h1 {
   padding-bottom: 5px;
 }
 
-.data-display .balance h5 svg,
-.data-display .income h5 svg,
-.data-display .expense h5 svg {
+.data-display .balance h2 svg,
+.data-display .income h2 svg,
+.data-display .expense h2 svg {
   padding-right: 5px;
   height: 12px;
   width: 12px;
