@@ -5,10 +5,10 @@ const income = document.getElementById('income')
 const expense = document.getElementById('expense')
 const transactionList = document.getElementById('transaction-list')
 const inputForm = document.getElementById('input-form')
-let inputText = document.getElementById('transaction-input-txt')
-let inputAmount = document.getElementById('transaction-input-amount')
 const addBtn = document.getElementById('add-btn')
 const deleteBtn = document.getElementById('delete-btn')
+let inputText = document.getElementById('transaction-input-txt')
+let inputAmount = document.getElementById('transaction-input-amount')
 
 const randomID = () => {
     return Math.floor(Math.random() * 1000);
